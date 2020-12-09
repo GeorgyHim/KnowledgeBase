@@ -12,28 +12,27 @@
 женщина(лена).
 женщина(тан€).
 
-не_гул€ет(пет€, кошка).
-
 хоз€ин_женщина(хом€к).
 
 гул€ет(тан€, кошка).
 
-can_walk(Kid, Pet, A):-не_гул€ет(Kid, Pet), append([], [], A), !.
-can_walk(Kid, Pet, A):-хоз€ин_женщина(Pet), not(женщина(Kid)), append([], [], A).
-can_walk(_, Pet, A):-append([Pet], [], A).
+first_el([H|_], H).
 
-find_for(Kid, A):-can_walk(Kid, собака, A1), can_walk(Kid, кошка, A2),  can_walk(Kid, хом€к, A3), append(A1, A2, ATem), append(ATem, A3, A).
+can_walk(Kid, Pet, []):-гул€ет(X, Pet), X \= Kid, !.
+can_walk(Kid, Pet, []):-хоз€ин_женщина(Pet), not(женщина(Kid)).
+can_walk(_, Pet, [Pet]).
 
-match(Kid):-гул€ет(Kid, Pet), assertz((не_гул€ет(Kid1, Pet):-Kid1 \= Kid)), write(Kid), write(Pet),!.
-match(Kid):-find_for(Kid, A), length(A, 1), assertz((гул€ет(Kid, Pet))), write(Kid), write(Pet), !.
-match(Kid):-write("Wait, "), write(Kid), !.
+find_for(Kid, Res):-can_walk(Kid, собака, A1), can_walk(Kid, кошка, A2),  can_walk(Kid, хом€к, A3), append(A1, A2, ATem), append(ATem, A3, Res).
+
+match(Kid):-гул€ет(Kid, _), !.
+match(Kid):-find_for(Kid, A), length(A, 1), first_el(A, Pet), assertz((гул€ет(Kid, Pet))), !.
+match(_):-!.
 
 match_kids:-гул€ет(пет€, _), гул€ет(лена, _), гул€ет(тан€, _), !.
 match_kids:-match(пет€), match(лена), match(тан€), match_kids.
 
-answer:- assertz((не_гул€ет(Kid1, кошка):-Kid1 \= тан€)),
-    match_kids,
-    гул€ет(пет€, PetP), write(пет€), write(" - "), write(PetP), nl,
-    гул€ет(лена, PetL), write(лена), write(" - "), write(PetL), nl,
-    гул€ет(тан€, PetT), write(тан€), write(" - "), write(PetT), !.
+answer:- match_kids,
+         гул€ет(пет€, PetP), write(пет€), write(" - "), write(PetP), nl,
+         гул€ет(лена, PetL), write(лена), write(" - "), write(PetL), nl,
+         гул€ет(тан€, PetT), write(тан€), write(" - "), write(PetT), !.
 
