@@ -1,8 +1,9 @@
-max(X,Y,X):-X>Y,!.
-max(_,Y,Y).
-
 max2(X, Y, COld, _, Res, CRes):-X>=Y, Res is X, CRes is COld,!.
 max2(_, Y, _, CNew, Res, CRes):-Res is Y, CRes is CNew.
+
+max3(X, Y, AOld, _, BOld, _, Res, ARes, BRes):-X>=Y, Res is X, ARes is AOld, BRes is BOld, !.
+max3(_, Y, _, ANew, _, BNew, Res, ARes, BRes):-Res is Y, ARes is ANew, BRes is BNew.
+
 
 is_simple(N):-N<2,!,fail.
 is_simple(2):-!.
@@ -16,11 +17,13 @@ funcAB(A, B, N0, Ans):-
     poly(A, B, N0, Res), is_simple(Res), N1 is N0 + 1, funcAB(A, B, N1, Ans);
     Ans is N0 - 1, !.
 
-funcA(_, B0, Mx0, MaxB0, Res, MaxB):-B0 > 1000, Res is Mx0, MaxB is MaxB0, !.
-funcA(A, B0, Mx0, MaxB0, Res, MaxB):-funcAB(A, B0, 0, Ans), max2(Mx0, Ans, MaxB0, B0, Tem, TemB), B1 is B0 + 1, funcA(A, B1, Tem, TemB, Res, MaxB).
+funcA(_, B0, TemMxRes, MaxB0, Res, ResB):-B0 > 1000, Res is TemMxRes, ResB is MaxB0, !.
+funcA(A, B0, TemMxRes, MaxB0, Res, ResB):-
+    funcAB(A, B0, 0, Ans), max2(TemMxRes, Ans, MaxB0, B0, Tem, TemB), B1 is B0 + 1, funcA(A, B1, Tem, TemB, Res, ResB).
 
-func(A0, Mx0, Res):-A0 > 1000, Res is Mx0, !.
-func(A0, Mx0, Res):-funcA(A0, -1000, 0, MxA), max(Mx0, MxA, Tem), A1 is A0 + 1, func(A1, Tem, Res).
+func(A0, TemMxRes, MaxA0, MaxB0, Res, ResA, ResB):-A0 > 1000, Res is TemMxRes, ResA is MaxA0, ResB is MaxB0, !.
+func(A0, TemMxRes, MaxA0, MaxB0, Res, ResA, ResB):-
+	funcA(A0, -1000, 0, -1, TemRes, TemMxB), max3(TemMxRes, TemRes, MaxA0, A0, MaxB0, TemMxB, Tem, TemA, TemB), A1 is A0 + 1, func(A1, Tem, TemA, TemB, Res, ResA, ResB).
 
 
-%f2 -> ... func(10, 20, 0, Ans)
+f(Res, ResA, ResB):-func(-1000, 0, 0, 0, TemRes, TemResA, TemResB), Res is TemRes, ResA is TemResA, ResB is TemResB, !.
