@@ -27,3 +27,5 @@ func(A0, TemMxRes, MaxA0, MaxB0, Res, ResA, ResB):-
 
 
 f(Res, ResA, ResB):-func(-1000, 0, 0, 0, TemRes, TemResA, TemResB), Res is TemRes, ResA is TemResA, ResB is TemResB, !.
+
+answer(Product):-f(_, ResA, ResB), Product is ResA * ResB.
