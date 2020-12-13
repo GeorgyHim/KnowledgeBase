@@ -15,7 +15,7 @@ write_str([]):-!.
 write_str([H|T]):-put(H),write_str(T).
 
 check_str([37|_]):-!.
-check_str(Str):- write_str(Str).
+check_str(Str):- write_str(Str), nl.
 
 % ѕредикат обработки и вывода списка строк
 process_list_str([]):-!.
