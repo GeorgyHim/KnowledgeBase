@@ -1,5 +1,4 @@
 :- dynamic гуляет/2.
-:- dynamic не_гуляет/2.
 
 петя.
 лена.
@@ -34,5 +33,5 @@ match_kids:-match(петя), match(лена), match(таня), match_kids.
 answer:- match_kids,
          гуляет(петя, PetP), write(петя), write(" - "), write(PetP), nl,
          гуляет(лена, PetL), write(лена), write(" - "), write(PetL), nl,
-         гуляет(таня, PetT), write(таня), write(" - "), write(PetT), !.
+         гуляет(таня, PetT), write(таня), write(" - "), write(PetT).
 
