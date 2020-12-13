@@ -23,6 +23,6 @@ process_list_str([H|T]):-check_str(H), process_list_str(T).
 
 
 answer:-
-    see('C:/Химшиашвили/Учеба/Базы знаний/Задания ProLog/ИДЗ/input.txt'), read_list_str(List), seen,
-    tell('C:/Химшиашвили/Учеба/Базы знаний/Задания ProLog/ИДЗ/output.txt'), process_list_str(List), told.
+    see('C:/Химшиашвили/Учеба/Базы знаний/Задания ProLog/ИДЗ/input_3.txt'), read_list_str(List), seen,
+    tell('C:/Химшиашвили/Учеба/Базы знаний/Задания ProLog/ИДЗ/output_3.txt'), process_list_str(List), told.
 
