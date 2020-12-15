@@ -46,10 +46,31 @@
         <Class IRI="#Provisor"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#advice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#buy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#check"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#clean"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#manage"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#order"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#pay"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sell"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#worksIn"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Cleaner"/>
@@ -64,20 +85,76 @@
         <Class IRI="#Employee"/>
     </SubClassOf>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#advice"/>
+        <Class IRI="#Pharmacist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#buy"/>
+        <Class IRI="#Customer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#check"/>
+        <Class IRI="#Provisor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#clean"/>
+        <Class IRI="#Cleaner"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#manage"/>
         <Class IRI="#Manager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#order"/>
+        <Class IRI="#Provisor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#pay"/>
         <Class IRI="#Manager"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#sell"/>
+        <Class IRI="#Pharmacist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#worksIn"/>
+        <Class IRI="#Employee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#advice"/>
+        <Class IRI="#Customer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#buy"/>
+        <Class IRI="#Medicine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#check"/>
+        <Class IRI="#Medicine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#clean"/>
+        <Class IRI="#Pharmacy"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#manage"/>
         <Class IRI="#Pharmacy"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#order"/>
+        <Class IRI="#Medicine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#pay"/>
         <Class IRI="#Employee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#sell"/>
+        <Class IRI="#Medicine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#worksIn"/>
+        <Class IRI="#Pharmacy"/>
     </ObjectPropertyRange>
 </Ontology>
 
