@@ -75,8 +75,57 @@
     <Declaration>
         <ObjectProperty IRI="#workIn"/>
     </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#price"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#salary"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#title"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Аптека"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Менеджер"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Покупатель"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Покупатель2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Провизор"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Снотворное"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Уборщик"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Cleaner"/>
+        <Class IRI="#Employee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manager"/>
         <Class IRI="#Employee"/>
     </SubClassOf>
     <SubClassOf>
@@ -87,6 +136,280 @@
         <Class IRI="#Provisor"/>
         <Class IRI="#Employee"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Pharmacy"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacy"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manager"/>
+        <NamedIndividual IRI="#Менеджер"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Customer"/>
+        <NamedIndividual IRI="#Покупатель"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Customer"/>
+        <NamedIndividual IRI="#Покупатель2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Provisor"/>
+        <NamedIndividual IRI="#Провизор"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacy"/>
+        <NamedIndividual IRI="#Снотворное"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cleaner"/>
+        <NamedIndividual IRI="#Уборщик"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacist"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacist"/>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacist"/>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#sell"/>
+        <NamedIndividual IRI="#Аптека"/>
+        <NamedIndividual IRI="#Снотворное"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#sell"/>
+        <NamedIndividual IRI="#Аптека"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manage"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pay"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Менеджер"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pay"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Провизор"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pay"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pay"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pay"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pay"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Уборщик"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#workIn"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#buy"/>
+        <NamedIndividual IRI="#Покупатель"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visit"/>
+        <NamedIndividual IRI="#Покупатель"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#buy"/>
+        <NamedIndividual IRI="#Покупатель2"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#buy"/>
+        <NamedIndividual IRI="#Покупатель2"/>
+        <NamedIndividual IRI="#Снотворное"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visit"/>
+        <NamedIndividual IRI="#Покупатель2"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#check"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <NamedIndividual IRI="#Снотворное"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#check"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#order"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#order"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <NamedIndividual IRI="#Снотворное"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#workIn"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#clean"/>
+        <NamedIndividual IRI="#Уборщик"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#workIn"/>
+        <NamedIndividual IRI="#Уборщик"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#advice"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+        <NamedIndividual IRI="#Покупатель"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#sell"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+        <NamedIndividual IRI="#Снотворное"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#workIn"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#sell"/>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#workIn"/>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#advice"/>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+        <NamedIndividual IRI="#Покупатель2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#workIn"/>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+        <NamedIndividual IRI="#Аптека"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#title"/>
+        <NamedIndividual IRI="#Аптека"/>
+        <Literal datatypeIRI="&xsd;string">Who wants to live forever</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+        <Literal datatypeIRI="&xsd;integer">555777</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#title"/>
+        <NamedIndividual IRI="#Лекарство_от_Ковида"/>
+        <Literal datatypeIRI="&xsd;string">Covid Destroyer</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fio"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <Literal datatypeIRI="&xsd;string">Зуев Алексей Валерьевич</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Менеджер"/>
+        <Literal datatypeIRI="&xsd;integer">322000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fio"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <Literal datatypeIRI="&xsd;string">Панов Кирилл Степанович</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Провизор"/>
+        <Literal datatypeIRI="&xsd;integer">50000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Снотворное"/>
+        <Literal datatypeIRI="&xsd;integer">300</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#title"/>
+        <NamedIndividual IRI="#Снотворное"/>
+        <Literal datatypeIRI="&xsd;string">Dream Team</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fio"/>
+        <NamedIndividual IRI="#Уборщик"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Иванов Иван Иванович</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Уборщик"/>
+        <Literal datatypeIRI="&xsd;integer">3220</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fio"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+        <Literal datatypeIRI="&xsd;string">Кузнецова Алина Сергеевна</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Фармацевт_1"/>
+        <Literal datatypeIRI="&xsd;integer">20000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fio"/>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+        <Literal datatypeIRI="&xsd;string">Магомедов Алан Бисланович</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Фармацевт_2"/>
+        <Literal datatypeIRI="&xsd;integer">20000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fio"/>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+        <Literal datatypeIRI="&xsd;string">Нгуен Ли Хо</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Фармацевт_3"/>
+        <Literal datatypeIRI="&xsd;integer">20000</Literal>
+    </DataPropertyAssertion>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#advice"/>
         <Class IRI="#Pharmacist"/>
@@ -167,6 +490,42 @@
         <ObjectProperty IRI="#workIn"/>
         <Class IRI="#Pharmacy"/>
     </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#fio"/>
+        <Class IRI="#Employee"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#price"/>
+        <Class IRI="#Medicine"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#salary"/>
+        <Class IRI="#Employee"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#title"/>
+        <Class IRI="#Medicine"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#title"/>
+        <Class IRI="#Pharmacy"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#fio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#price"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#salary"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#title"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
 </Ontology>
 
 
